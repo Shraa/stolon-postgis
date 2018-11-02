@@ -1,4 +1,4 @@
-FROM sorintlab/stolon:v0.12.0-pg10
+FROM sorintlab/stolon:v0.12.0-pg11
 
 LABEL \
     VER="1.0" \
@@ -20,9 +20,9 @@ RUN set -ex \
  && apt-get install --no-install-recommends -yqq \
       ca-certificates \
       postgis \
-      postgresql-10-postgis-2.5-scripts \
-      postgresql-10-postgis-2.5 \
-      postgresql-server-dev-10 \
+      postgresql-11-postgis-2.5-scripts \
+      postgresql-11-postgis-2.5 \
+      postgresql-server-dev-11 \
  && rm -rf \
       /var/lib/apt/lists/* \
       /tmp/* \
