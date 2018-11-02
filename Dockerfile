@@ -1,4 +1,4 @@
-FROM sorintlab/stolon:v0.13.0-pg9.4
+FROM sorintlab/stolon:v0.13.0-pg9.5
 
 LABEL \
     VER="1.0" \
@@ -10,7 +10,7 @@ LABEL \
 ARG TZ=Europe/Moscow
 ARG DEBIAN_FRONTEND=noninteractive
 ARG DEBCONF_NONINTERACTIVE_SEEN=true
-ARG POSTGIS_VER=2.5
+ARG POSTGIS_VER=2.3
 
 RUN set -ex \
  && ln -snf /usr/share/zoneinfo/ /etc/localtime \
@@ -20,9 +20,9 @@ RUN set -ex \
  && apt-get install --no-install-recommends -yqq \
       ca-certificates \
       postgis \
-      postgresql-9.4-postgis-2.5-scripts \
-      postgresql-9.4-postgis-2.5 \
-      postgresql-server-dev-9.4 \
+      postgresql-9.5-postgis-2.3-scripts \
+      postgresql-9.5-postgis-2.3 \
+      postgresql-server-dev-9.5 \
  && rm -rf \
       /var/lib/apt/lists/* \
       /tmp/* \
