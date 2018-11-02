@@ -10,7 +10,7 @@ LABEL \
 ARG TZ=Europe/Moscow
 ARG DEBIAN_FRONTEND=noninteractive
 ARG DEBCONF_NONINTERACTIVE_SEEN=true
-ARG POSTGIS_VER=2.4
+ARG POSTGIS_VER=2.5
 
 RUN set -ex \
  && ln -snf /usr/share/zoneinfo/ /etc/localtime \
@@ -20,8 +20,8 @@ RUN set -ex \
  && apt-get install --no-install-recommends -yqq \
       ca-certificates \
       postgis \
-      postgresql-9.6-postgis-2.4-scripts \
-      postgresql-9.6-postgis-2.4 \
+      postgresql-9.6-postgis-2.5-scripts \
+      postgresql-9.6-postgis-2.5 \
       postgresql-server-dev-9.6 \
  && rm -rf \
       /var/lib/apt/lists/* \
